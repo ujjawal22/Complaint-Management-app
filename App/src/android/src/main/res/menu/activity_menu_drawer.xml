@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/mainlist"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="List of all Complaints" />
+        <item
+            android:id="@+id/resolved"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="List of resolved Complaints" />
+        <item
+            android:id="@+id/unresolved"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="List of unresolved Complaints" />
+        <item
+            android:id="@+id/notification"
+            android:icon="@drawable/notifications"
+            android:title="Notifications" />
+    </group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/newcomplaint"
+                android:icon="@drawable/ic_menu_share"
+                android:title="File a new complaint" />
+            <item
+                android:id="@+id/adduser"
+                android:icon="@drawable/name1"
+                android:title="Add a New User" />
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/logout"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>

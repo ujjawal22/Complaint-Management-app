@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-
+
+db.define_table('users',
+                db.Field('username','string',required=True),
+                db.Field('password','string',required=True),
+                db.Field('name','string',required=True),
+                db.Field('email','string',required=False),
+                db.Field('phone','integer',required=False),
+                db.Field('user_type','integer',length=1,default=0,required=True),
+               )
+
+db.define_table('complaints',
+                db.Field('user_id','integer',required=True),
+                db.Field('username','string',required=True),
+                db.Field('complaint_type','integer',length=1,required=True),
+                db.Field('concerned_user','string',required=True),
+                db.Field('title','string',required=True),
+                db.Field('description','string',required=True),
+                db.Field('complaint_status','integer',default=0,length=1,required=False),
+                db.Field('comments','string',required=False),
+                db.Field('comment_user','string',required=False),
+                db.Field('upvote_users','list:reference users',required=False),
+                db.Field('downvote_users','list:reference users',required=False),
+               )
+
+
+db.define_table('notifications',
+                db.Field('user_list','list:reference users',required=True),
+                db.Field('username','reference users',required=True),
+                db.Field('complaint_type','integer',length=1,required=True),
+                db.Field('complaint_status','integer',length=1,required=True),
+                db.Field('concerned_user','string',required=True),
+                db.Field('title','string',required=True),
+                db.Field('descrpition','string',required=True),
+               )
